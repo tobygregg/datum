@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face{font-family:"Barlow Semi Condensed";font-weight:600;font-display:swap;src:url("../fonts/barlow-semi-condensed-latin-600-normal.woff2") format("woff2")}
+@font-face{font-family:"Barlow Semi Condensed";font-weight:700;font-display:swap;src:url("../fonts/barlow-semi-condensed-latin-700-normal.woff2") format("woff2")}
+@font-face{font-family:"Source Sans 3";font-weight:400;font-display:swap;src:url("../fonts/source-sans-3-latin-400-normal.woff2") format("woff2")}
+@font-face{font-family:"Source Sans 3";font-weight:600;font-display:swap;src:url("../fonts/source-sans-3-latin-600-normal.woff2") format("woff2")}
+
+@layer base {
+  html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
+  body { @apply font-body text-ink bg-white antialiased; font-size: 1.0625rem; }
+  h1,h2,h3 { @apply font-heading font-bold tracking-tight; }
+  :focus-visible { outline: 3px solid #f97316; outline-offset: 3px; }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *,*::before,*::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
+  }
+}
+@layer components {
+  .btn { @apply inline-flex items-center justify-center gap-2 rounded-md px-6 py-3 font-heading font-semibold text-lg transition-colors; }
+  .btn-primary { @apply bg-copper text-white hover:bg-copper-dark; }
+  .btn-ghost { @apply border-2 border-white text-white hover:bg-white hover:text-navy; }
+  .section-label { @apply font-heading font-semibold uppercase tracking-widest text-sm text-copper; }
+  .blueprint { background-image: linear-gradient(rgba(255,255,255,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.06) 1px,transparent 1px); background-size: 32px 32px; }
+}
+dialog#lightbox { @apply bg-transparent p-0 max-w-none max-h-none w-full h-full; }
+dialog#lightbox::backdrop { background: rgba(7,34,74,.92); }
